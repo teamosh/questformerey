@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle in the Forest</title>
+    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+        .main-content {
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            height: 100vh;
+            background: linear-gradient(to right, rgba(36,31,31,1) 0%, rgba(36,31,31,1) 32%, rgba(74,71,70,1) 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .vignette {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0px 0px 150px 20px black;
+            mix-blend-mode: multiply;
+            animation: vignette-anim 3s infinite;
+        }
+
+        .noise {
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: .15;
+        }
+
+        .riddle {
+            font-family: 'Bellefair', serif;
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .answer {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #666;
+        }
+
+        @keyframes vignette-anim {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main role="main" class="main-content" id="main-content">
+        <div class="titleCont">
+            <h1 class="main-title" id="main-title">
+                "Here, in the forest,<br><span style="padding-left:100px">dark and deep,</span><br>
+                <span style="padding-right:110px">I offer you,</span><br><span style="padding-left:-20px">eternal sleep."
+                </span>
+            </h1>
+        </div>
+        <div class="riddle">I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?</div>
+        <div class="answer">
+            <input type="text" id="user-answer" placeholder="Type your answer here...">
+            <button onclick="checkAnswer()">Submit</button>
+        </div>
+        <div id="message" style="margin-top: 20px; font-size: 18px; color: lightgreen;"></div>
+        <canvas id="noise" class="noise"></canvas>
+        <div class="vignette"></div>
+    </main>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('user-answer').value.trim().toLowerCase();
+            const message = document.getElementById('message');
+
+            if (userAnswer === 'echo') {
+                message.textContent = "Correct! The answer is 'Echo'.";
+                setTimeout(() => {
+                    window.location.href = 'next_puzzle.html';
+                }, 2000);
+            } else {
+                message.textContent = "Incorrect! Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
