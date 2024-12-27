@@ -26,6 +26,7 @@
             height: 100%;
             box-shadow: inset 0px 0px 150px 20px black;
             mix-blend-mode: multiply;
+            pointer-events: none;
             animation: vignette-anim 3s infinite;
         }
 
@@ -49,6 +50,15 @@
         .answer {
             font-size: 18px;
             margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            margin-right: 10px;
         }
 
         button {
@@ -102,7 +112,7 @@
             if (userAnswer === 'echo') {
                 message.textContent = "Correct! The answer is 'Echo'.";
                 setTimeout(() => {
-                    window.location.href = 'next_puzzle.html';
+                    window.location.href = 'rdx.html';
                 }, 2000);
             } else {
                 message.textContent = "Incorrect! Try again.";
