@@ -48,6 +48,16 @@
             background-color: #45a049;
         }
     </style>
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase();
+            if (answer === 'pit stop') {
+                window.location.href = 'okm.html';
+            } else {
+                alert('Incorrect answer! Try again.');
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -56,10 +66,11 @@
         <p>We're celebrating your incredible achievements today!</p>
         <div class="task">
             <p><strong>Your Special Task:</strong></p>
-            <p>Solve this riddle to claim your prize:</p>
-            <p><em>"I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?"</em></p>
+            <p>Solve this Formula 1 riddle to claim your prize:</p>
+            <p><em>"In Formula 1, I’m where cars stop but not for long, and teamwork is crucial. What am I?"</em></p>
+            <input type="text" id="answer" placeholder="Your answer here">
+            <button onclick="checkAnswer()">Submit Your Answer</button>
         </div>
-        <button onclick="alert('Think carefully, you've got this!')">Submit Your Answer</button>
     </div>
 </body>
 </html>
