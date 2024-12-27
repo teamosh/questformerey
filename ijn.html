@@ -38,9 +38,12 @@
             background-color: #ffffff;
             transition: transform 0.3s, background-color 0.3s;
         }
+        .series div.selected {
+            background-color: #e0f7fa;
+            border-color: #007bff;
+        }
         .series div:hover {
             transform: scale(1.1);
-            background-color: #e0f7fa;
         }
         .button {
             margin-top: 30px;
@@ -59,25 +62,27 @@
     <script>
         let selectedSeries = [];
 
-        function toggleSelection(series) {
+        function toggleSelection(seriesElement, series) {
             const index = selectedSeries.indexOf(series);
             if (index === -1) {
                 selectedSeries.push(series);
+                seriesElement.classList.add('selected');
             } else {
                 selectedSeries.splice(index, 1);
+                seriesElement.classList.remove('selected');
             }
             console.log(selectedSeries);
         }
 
         function checkSelection() {
-            const topSeries = ['series1', 'series5']; 
+            const topSeries = ['series1', 'series5']; // Replace with actual top series names
             if (
                 selectedSeries.length === 2 &&
                 topSeries.every(series => selectedSeries.includes(series))
             ) {
                 window.location.href = 'uhb.html';
             } else {
-                alert('Incorrect selection! Please choose the ------ TOP ----2 series.');
+                alert('Incorrect selection! Please choose the objectively top 2 series.');
             }
         }
     </script>
@@ -87,14 +92,14 @@
         <h1>Choose the Top 2 Series</h1>
         <p>Select the top 2 series from the options below:</p>
         <div class="series">
-            <div onclick="toggleSelection('series1')">Arcane</div>
-            <div onclick="toggleSelection('series2')">Black Mamba</div>
-            <div onclick="toggleSelection('series3')">Game Of Thrones</div>
-            <div onclick="toggleSelection('series4')">JJK 🥱😴💤💤</div>
-            <div onclick="toggleSelection('series5')">AboutTheRotationOfTheEarth</div>
-            <div onclick="toggleSelection('series6')">Tokyo Ghoul</div>
-            <div onclick="toggleSelection('series7')">Cowboy Beibarys</div>
-            <div onclick="toggleSelection('series8')">Cyberpunk</div>
+            <div onclick="toggleSelection(this,'series1')">Arcane</div>
+            <div onclick="toggleSelection(this,'series2')">Black Mamba</div>
+            <div onclick="toggleSelection(this,'series3')">Game Of Thrones</div>
+            <div onclick="toggleSelection(this,'series4')">JJK 🥱😴💤💤</div>
+            <div onclick="toggleSelection(this,'series5')">AboutTheRotationOfTheEarth</div>
+            <div onclick="toggleSelection(this,'series6')">Tokyo Ghoul</div>
+            <div onclick="toggleSelection(this,'series7')">Cowboy Beibarys</div>
+            <div onclick="toggleSelection(this,'series8')">Cyberpunk</div>
         </div>
         <button class="button" onclick="checkSelection()">Submit Your Selection</button>
     </div>
