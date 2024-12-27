@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose the Best</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .images img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .images img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function checkChoice(choice) {
+            if (choice === 'best') {
+                alert('Correct! You chose the best one!');
+            } else {
+                alert('Incorrect! Try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose the Best Man!</h1>
+        <p>Here are four pictures of men. Click on the one you think is the best:</p>
+        <div class="images">
+            <img src="man1.jpg" alt="Man 1" onclick="checkChoice('not-best')">
+            <img src="man2.jpg" alt="Man 2" onclick="checkChoice('not-best')">
+            <img src="man3.jpg" alt="Man 3" onclick="checkChoice('best')">
+            <img src="man4.jpg" alt="Man 4" onclick="checkChoice('not-best')">
+        </div>
+    </div>
+</body>
+</html>
