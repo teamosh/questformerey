@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Top Series</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #007bff;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .series {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+        .series div {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .series div:hover {
+            transform: scale(1.1);
+            background-color: #e0f7fa;
+        }
+        .button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        let selectedSeries = [];
+
+        function toggleSelection(series) {
+            const index = selectedSeries.indexOf(series);
+            if (index === -1) {
+                selectedSeries.push(series);
+            } else {
+                selectedSeries.splice(index, 1);
+            }
+            console.log(selectedSeries);
+        }
+
+        function checkSelection() {
+            const topSeries = ['series1', 'series5']; 
+            if (
+                selectedSeries.length === 2 &&
+                topSeries.every(series => selectedSeries.includes(series))
+            ) {
+                window.location.href = 'uhb.html';
+            } else {
+                alert('Incorrect selection! Please choose the ------ TOP ----2 series.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose the Top 2 Series</h1>
+        <p>Select the top 2 series from the options below:</p>
+        <div class="series">
+            <div onclick="toggleSelection('series1')">Arcane</div>
+            <div onclick="toggleSelection('series2')">Black Mamba</div>
+            <div onclick="toggleSelection('series3')">Game Of Thrones</div>
+            <div onclick="toggleSelection('series4')">JJK 🥱😴💤💤</div>
+            <div onclick="toggleSelection('series5')">AboutTheRotationOfTheEarth</div>
+            <div onclick="toggleSelection('series6')">Tokyo Ghoul</div>
+            <div onclick="toggleSelection('series7')">Cowboy Beibarys</div>
+            <div onclick="toggleSelection('series8')">Cyberpunk</div>
+        </div>
+        <button class="button" onclick="checkSelection()">Submit Your Selection</button>
+    </div>
+</body>
+</html>
