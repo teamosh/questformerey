@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Merey Likes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            font-size: 16px;
+            padding: 10px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px;
+            margin-left: 5px;
+        }
+        .hint {
+            margin-top: 20px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess What Merey Likes (First Two Letters)</h1>
+    <label for="guess-input">Введите ваш ответ:</label>
+    <br><br>
+    <input type="text" id="guess-input" placeholder="#">
+    <button onclick="submitGuess()">Submit</button>
+    <div class="hint">
+        <img src="boring.jpg" alt="Hint Image" width="200">
+    </div>
+    <div class="message" id="message"></div>
+
+    <script>
+        let attemptCount = 0;
+
+        function submitGuess() {
+            const input = document.getElementById('guess-input').value.trim().toLowerCase();
+            const messageDiv = document.getElementById('message');
+            attemptCount++;
+
+            if (input === 'in') {
+                window.location.href = 'tfc.html';
+                return;
+            }
+
+            if (attemptCount === 5) {
+                messageDiv.textContent = "Hint: It's about Merey!";
+            } else {
+                messageDiv.textContent = `Попытка ${attemptCount}: ${input}`;
+            }
+        }
+    </script>
+</body>
+</html>
