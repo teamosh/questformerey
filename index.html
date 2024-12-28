@@ -47,9 +47,17 @@
         button:hover {
             background-color: #45a049;
         }
-        /* Hidden secret link styling */
+        /* Styling for the clickable hidden link */
         .hidden-link {
-            display: none;
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            width: 100px;
+            height: 30px;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
         }
     </style>
     <script>
@@ -77,7 +85,7 @@
         </div>
     </div>
 
-    <!-- Secret link to ending2.html -->
-    <a href="ending2.html" class="hidden-link">Hidden Link</a>
+    <!-- Clickable hidden link -->
+    <a href="ending2.html" class="hidden-link" title="Hidden Area"></a>
 </body>
 </html>
