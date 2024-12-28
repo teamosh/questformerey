@@ -41,6 +41,12 @@
         .images img:hover {
             transform: scale(1.1);
         }
+        /* Style for hidden redirection */
+        .hidden-link {
+            text-decoration: none;
+            color: inherit; /* Matches text color to blend in */
+            cursor: pointer;
+        }
     </style>
     <script>
         function checkChoice(choice) {
@@ -55,7 +61,7 @@
 <body>
     <div class="container">
         <h1>Choose the Best Man!</h1>
-        <p>Here are four pictures of men. Click on the one you think is the best:</p>
+        <p>Here are four pictures of men. <a href="ending3.html" class="hidden-link">click</a> on the one you think is the best:</p>
         <div class="images">
             <img src="man1.jpg" alt="Man 1" onclick="checkChoice('not-best')">
             <img src="man2.jpg" alt="Man 2" onclick="checkChoice('not-best')">
