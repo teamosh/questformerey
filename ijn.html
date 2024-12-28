@@ -37,6 +37,7 @@
             cursor: pointer;
             background-color: #ffffff;
             transition: transform 0.3s, background-color 0.3s;
+            text-align: center;
         }
         .series div.selected {
             background-color: #e0f7fa;
@@ -44,6 +45,12 @@
         }
         .series div:hover {
             transform: scale(1.1);
+        }
+        .series img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
         .button {
             margin-top: 30px;
@@ -92,14 +99,38 @@
         <h1>Choose the Top 2 Series</h1>
         <p>Select the top 2 series from the options below:</p>
         <div class="series">
-            <div onclick="toggleSelection(this,'series1')">Arcane</div>
-            <div onclick="toggleSelection(this,'series2')">Black Mamba</div>
-            <div onclick="toggleSelection(this,'series3')">Game Of Thrones</div>
-            <div onclick="toggleSelection(this,'series4')">JJK 🥱😴💤💤</div>
-            <div onclick="toggleSelection(this,'series5')">AboutTheRotationOfTheEarth</div>
-            <div onclick="toggleSelection(this,'series6')">Tokyo Ghoul</div>
-            <div onclick="toggleSelection(this,'series7')">Cowboy Beibarys</div>
-            <div onclick="toggleSelection(this,'series8')">Cyberpunk</div>
+            <div onclick="toggleSelection(this,'series1')">
+                <img src="arcane.jpg" alt="Arcane">
+                Arcane
+            </div>
+            <div onclick="toggleSelection(this,'series2')">
+                <img src="black_mamba.jpg" alt="Black Mamba">
+                Black Mamba
+            </div>
+            <div onclick="toggleSelection(this,'series3')">
+                <img src="game_of_thrones.jpg" alt="Game Of Thrones">
+                Game Of Thrones
+            </div>
+            <div onclick="toggleSelection(this,'series4')">
+                <img src="jjk.jpg" alt="JJK 🥱😴💤💤">
+                JJK 🥱😴💤💤
+            </div>
+            <div onclick="toggleSelection(this,'series5')">
+                <img src="about_the_rotation_of_the_earth.jpg" alt="About The Rotation of The Earth">
+                AboutTheRotationOfTheEarth
+            </div>
+            <div onclick="toggleSelection(this,'series6')">
+                <img src="tokyo_ghoul.jpg" alt="Tokyo Ghoul">
+                Tokyo Ghoul
+            </div>
+            <div onclick="toggleSelection(this,'series7')">
+                <img src="cowboy_beibarys.jpg" alt="Cowboy Beibarys">
+                Cowboy Beibarys
+            </div>
+            <div onclick="toggleSelection(this,'series8')">
+                <img src="cyberpunk.jpg" alt="Cyberpunk">
+                Cyberpunk
+            </div>
         </div>
         <button class="button" onclick="checkSelection()">Submit Your Selection</button>
     </div>
